@@ -2,6 +2,7 @@ pick1 :: String -> Int -> [String]
 pick1 [] n     = []
 pick1 (x:xs) n = replicate n x : pick1 xs n
 
+pick2 :: String -> [String]
 pick2 alph = pick2' [] chosen
                where
              chosen = choosingTwo alph
@@ -12,10 +13,13 @@ pick2 alph = pick2' [] chosen
 pattern2 :: String -> [String]
 pattern2 [x,y] = [[x,y,x,y,x], [x,y,y,y,x], [x,x,y,x,x]]
 
+choosingTwo :: String -> [String]
 choosingTwo alph = [[x,y]| x <- alph, y <- alph, x /= y]
 
+pick3 :: String -> [String]
 pick3 alph = map pattern3 $ choosingThree alph
 
+choosingThree :: String -> [String]
 choosingThree alph = [[x,y,z]| x <- alph, y <- alph, z <- alph, x /= y, x /= z, y /= z]
 
 pattern3 :: String -> String
