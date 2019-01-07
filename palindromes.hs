@@ -1,5 +1,3 @@
-alphabet = "1234567890"
-
 pick1 :: String -> Int -> [String]
 pick1 [] n     = []
 pick1 (x:xs) n = replicate n x : pick1 xs n
@@ -16,7 +14,12 @@ pattern2 [x,y] = [[x,y,x,y,x], [x,y,y,y,x], [x,x,y,x,x]]
 
 choosingTwo alph = [[x,y]| x <- alph, y <- alph, x /= y]
 
-pick3 = undefined
+pick3 alph = map pattern3 $ choosingThree alph
+
+choosingThree alph = [[x,y,z]| x <- alph, y <- alph, z <- alph, x /= y, x /= z, y /= z]
+
+pattern3 :: String -> String
+pattern3 [x,y,z] = [x,y,z,y,x]
 
 -- To create a palindrome of length 5, we can pick one, two or three different characters from our alphabet
 palindromes5 :: String -> [String]
