@@ -1,3 +1,7 @@
+module Palindromes 
+  (palindromes5)
+  where 
+
 pick1 :: String -> Int -> [String]
 pick1 [] n     = []
 pick1 (x:xs) n = replicate n x : pick1 xs n
