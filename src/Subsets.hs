@@ -1,4 +1,6 @@
-module Subsets (subsets) where
+module Subsets 
+  ( subsets
+  , subsetLength ) where
 
 import Control.Monad
 
@@ -26,3 +28,12 @@ subsets lst = map (subsets' lst) (permutations lenlst)
                   | y == One  = x:subsets' xs ys
                   | y == Zero = subsets' xs ys
                 lenlst = length lst
+
+subsetLength :: Int -> [a] -> [[a]]
+subsetLength n set = filter (\x -> length x == n) $ subsets set
+
+unique :: Eq a => [a] -> [a]
+unique [] = []
+unique (x:xs)
+  | elem x xs = unique xs
+  | otherwise = x : unique xs
