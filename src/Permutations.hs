@@ -1,3 +1,9 @@
+module Permutations 
+  ( factorials
+  , factorial
+  , kPermutationsOfN
+  , repetitions ) where
+
 factorials :: [Integer]
 factorials = 1:zipWith (*) factorials [1..]
 

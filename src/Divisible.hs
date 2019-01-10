@@ -1,3 +1,7 @@
+module Divisible
+  (checkValidUntil
+  , both) where
+
 odds = "13579"
 evens = "02468"
 
