@@ -17,4 +17,4 @@ Once GHCi opens you can call the functions. Read comments for use cases and note
 ```
 ghci
 ```
-Otherwise the same as above.
+You have to load files manually, otherwise the same as above.
